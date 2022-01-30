@@ -16,6 +16,10 @@ class Main{
         System.out.println(Arrays.toString(arr));
     }
     public static void rotate(int[]arr,int k){
+        if(arr.length==1 || k==0){
+            return;
+        }
+        k=k%arr.length;
         reverse(arr, 0, arr.length-1);  //Ist Reverse the total array
         reverse(arr, 0, k-1);  //Reverse till k from 0
         reverse(arr, k, arr.length-1); //reverse from k to length-1 //Then we get Our Roatedarray
